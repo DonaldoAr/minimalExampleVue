@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>VueJS Intro</title>
-    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://unpkg.com/vue@3"></script>     
 </head>
 <body>
     <!-- Vue va a tener control absoluto de este elemento -->
     <div id="myApp">
         <h1>Batman Quotes <small>{{newQuote}}</small></h1>
-        <input type="text" v-model="newQuote" v-on:keypress="">
+        <input type="text" v-model="newQuote" v-on:keypress="addQuote">
         <hr>
         <ul>
             <li v-for="({quote, author}, index) in quotes"> 
-               <span>{{index+1}}.{{ quote }}</span>
-               <blockquote>-{{author}}</blockquote>
+                <span>{{index+1}}.{{ quote }}</span>
+                <blockquote>-{{author}}</blockquote>
             </li>
         </ul>
     </div>
