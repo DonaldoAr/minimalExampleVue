@@ -7,10 +7,16 @@
 </head>
 <body>
     <!-- Vue va a tener control absoluto de este elemento -->
-    <div id="myApp"> 
-        <h1>{{mensaje}}</h1>
-        <blockquote> -{{Author}} </blockquote>
-        <button v-on:click="chageName">Cambiar</button>
+    <div id="myApp">
+        <h1>Batman Quotes <small>{{newQuote}}</small></h1>
+        <input type="text" v-model="newQuote" v-on:keypress="">
+        <hr>
+        <ul>
+            <li v-for="({quote, author}, index) in quotes"> 
+               <span>{{index+1}}.{{ quote }}</span>
+               <blockquote>-{{author}}</blockquote>
+            </li>
+        </ul>
     </div>
     <script src="./app.js"></script>
 </body>
