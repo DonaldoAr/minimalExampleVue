@@ -14,10 +14,8 @@ const app = Vue.createApp({
       newQuote: 'Hola'
     }},
   methods:{
-    addQuote( {key} ){
-      if (key == 'Enter') {
-        this.quotes.unshift( {quote: this.newQuote} );
-      }      
+    addQuote(){
+        this.quotes.unshift( {quote: this.newQuote} );      
     }
   }
 
